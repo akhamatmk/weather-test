@@ -13,3 +13,4 @@
 
 Route::get('/', 'MainController@index');
 Route::get('ajax/weather', 'MainController@ajaxGetWeather');
+Route::get('search', 'SearchController@index');
