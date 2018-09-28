@@ -20,7 +20,7 @@
 	
 	@if(count($result) < 1)
 	<div class="starter-template">
-    	<h1>data tidak tersedia</h1>
+    	<h1>data tidak tersedia</h1> 
   	</div>
 	@else
 		@foreach($result as $v)
