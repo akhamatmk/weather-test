@@ -29,6 +29,6 @@ class MainController extends Controller
 		if(isset($getWeather['consolidated_weather']))
 			$html = view('index_weater')->with('result', $getWeather['consolidated_weather'])->render();
 
-    	return response()->json(['html' => $html]);
+    	return response()->json(['html' => $html]); 
 	}
 }
