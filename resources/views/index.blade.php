@@ -2,15 +2,12 @@
 
 @section('content')
 <div class="container">
-  <div id="main-content"></div>
+	<div id="main-content"></div>
 </div>
-
-<p id="demo"></p>
 
 @section('footer-script')
 	<script type="text/javascript">
 	$(function() {
-	   let x = document.getElementById("demo");
 	   let latitude = "-6.2440165";
 	   let longitude = "106.7883531";
 
