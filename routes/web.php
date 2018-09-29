@@ -12,5 +12,8 @@
 */
 
 Route::get('/', 'MainController@index');
+Route::get('beranda', 'MainController@beranda');
+Route::get('map', 'MainController@map');
+Route::get('weather/history/{city_id}', 'MainController@historyWeather');
 Route::get('ajax/weather', 'MainController@ajaxGetWeather');
 Route::get('search', 'SearchController@index');

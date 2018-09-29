@@ -1,18 +1,3 @@
-<style type="text/css">
-	hr {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    width: 120% !important;
-	border-top: 1px solid #2E748F !important;
-}
-
-	.day-span{
-		font-size: 20px;
-    font-weight: 700;
-    color: #2E748F;
-	}
-</style>
-
 <div class="container">
   <div class="starter-template">
 		@php $img = get_image_weather($result[0]['weather_state_name']) @endphp
@@ -24,6 +9,8 @@
       <h1 style="color: #2E748F;">{{ $result[0]["weather_state_name"] }}</h1>
   </div>
 	
+	<h1><span>{{ $place['location_type'] }} Of {{ $place['title'] }}</span></h1>
+	<br>
 	<div class="card-deck">
 		@foreach($result as $key => $value)
 			@if($key != 0)
