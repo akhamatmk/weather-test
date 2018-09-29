@@ -28,8 +28,12 @@ class MainController extends Controller
 		$getWeather = get_curl($url_get_weather);
 
 		$html = "";
-		if(isset($getWeather['consolidated_weather']))
-			$html = view('index_weater')->with('result', $getWeather['consolidated_weather'])->render();
+		if(isset($getWeather['consolidated_weather'])){
+			$html = view('index_weater')
+					->with('place', $getPlace[0])
+					->with('result', $getWeather['consolidated_weather'])
+					->render();
+		}
 
     	return response()->json(['html' => $html]); 
 	}
@@ -44,5 +48,10 @@ class MainController extends Controller
 	{
 		$result = Result::where('city_id', $city_id)->paginate(15);
         return view('history', ['result' => $result]);
+	}
+
+	public function map()
+	{
+		return view('map');
 	}
 }

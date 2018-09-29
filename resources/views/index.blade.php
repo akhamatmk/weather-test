@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="container">
-	<div id="main-content"></div>
+	<div id="main-content">		
+	</div>
+	<div class="loader"></div>	
 </div>
 
 @section('footer-script')
@@ -42,6 +44,7 @@
 				},
 				dataType: 'json',
 				success: function(data){
+					$(".loader").hide();
 					$("#main-content").html(data.html);
 				}
 			});
