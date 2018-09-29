@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\City;
+use App\Model\Result;
 
 class MainController extends Controller
 {
@@ -26,9 +28,31 @@ class MainController extends Controller
 		$getWeather = get_curl($url_get_weather);
 
 		$html = "";
-		if(isset($getWeather['consolidated_weather']))
-			$html = view('index_weater')->with('result', $getWeather['consolidated_weather'])->render();
+		if(isset($getWeather['consolidated_weather'])){
+			$html = view('index_weater')
+					->with('place', $getPlace[0])
+					->with('result', $getWeather['consolidated_weather'])
+					->render();
+		}
 
     	return response()->json(['html' => $html]); 
+
+	}
+
+	public function beranda()
+	{
+		$result = City::paginate(15);
+        return view('beranda', ['result' => $result]);
+	}
+
+	public function historyWeather($city_id)
+	{
+		$result = Result::where('city_id', $city_id)->paginate(15);
+        return view('history', ['result' => $result]);
+	}
+
+	public function map()
+	{
+		return view('map');
 	}
 }
