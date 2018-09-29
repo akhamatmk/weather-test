@@ -11,6 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
     <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://v4-alpha.getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+    <link href="{{ asset('main_style.css') }}" rel="stylesheet">
 </head>
 
 <body style="background: url('{{ asset("image/Images-Light-Blue-HD-Backgrounds.jpg")  }}');">
@@ -23,11 +24,14 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ URL('/') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ URL('beranda') }}">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ URL('map') }}">Maps</a>
                 </li>                
             </ul>
             <form method="GET" action="{{ URL('search') }}" class="form-inline my-2 my-lg-0">

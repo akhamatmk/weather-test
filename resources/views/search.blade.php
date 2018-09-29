@@ -1,21 +1,6 @@
 @extends('layout.app')
 
 @section('content')
-<style type="text/css">
-	hr {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    width: 120% !important;
-	border-top: 1px solid #2E748F !important;
-	}
-
-	.day-span{
-		font-size: 20px;
-    font-weight: 700;
-    color: #2E748F;
-	}
-</style>
-
 <div class="container">
 	
 	@if(count($result) < 1)
